@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XF_MasterDetailPage.View.MainPage"
+                   Title="Controle Financeiro" >
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu" BackgroundColor="#24d6a9">
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="#2477d6" HeightRequest="75">
+                    <Label Text="Controle Financeiro Pessoal" FontSize="20"
+                       VerticalOptions="CenterAndExpand" TextColor="White"
+                       HorizontalOptions="Center"/>
+                </StackLayout>
+                
+                <ListView x:Name ="NavigationDrawerList" RowHeight="60"
+                          SeparatorVisibility="None" BackgroundColor="#e8e8e8"
+                          ItemSelected="OnMenuItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell ImageSource="{Binding Icon}" Text="{Binding Title}" TextColor="Black"></ImageCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+        
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage />
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
